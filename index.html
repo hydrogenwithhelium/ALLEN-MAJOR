@@ -2,60 +2,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALLEN MAJOR CBT</title>
-  <style>
+  <title>ALLEN MAJOR CBT</title>  <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #eef2f7;
+    }
+
+    header {
+      background: #0b1a2b;
+      color: #fff;
+      padding: 18px;
       text-align: center;
-    }h1 {
-  padding: 20px;
-  margin: 0;
-  background: #111;
-  color: #fff;
-  letter-spacing: 2px;
-}
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  padding: 30px;
-  max-width: 900px;
-  margin: auto;
-}
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
 
-.tile {
-  background: #fff;
-  padding: 30px 10px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: 0.2s ease;
-  font-weight: bold;
-}
+    .tile {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      position: relative;
+    }
 
-.tile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
+    .tile:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
 
-.test {
-  background: #111;
-  color: #fff;
-}
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-  </style>
-</head>
-<body>  <h1>ALLEN MAJOR CBT</h1>  <div class="container">
-    <a href="https://allenmajor1.vercel.app/" target="_blank" style="text-decoration:none; color:inherit;"><div class="tile">Allen Major 1</div></a>
-    <div class="tile">Allen Major 2</div>
-    <div class="tile">Allen Major 3</div>
-    <div class="tile">Allen Major 4</div>
-    <div class="tile">Allen Major 5</div>
-    <div class="tile">Allen Major 6</div>
-    <div class="tile">Allen Major 7</div>
-    <div class="tile test">Take Test</div>
-  </div></body>
+    .status {
+      font-size: 12px;
+      color: #888;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .telegram {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0088cc;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .telegram:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    .telegram img {
+      width: 28px;
+      height: 28px;
+    }
+
+  </style></head>
+<body>  <header>ALLEN MAJOR CBT</header>  <div class="container"><a href="https://allenmajor1.vercel.app/" target="_blank">
+  <div class="tile">
+    <div class="title">Allen Major 1</div>
+    <div class="status">Available</div>
+  </div>
+</a>
+
+<div class="tile">
+  <div class="title">Allen Major 2</div>
+  <div class="status">Coming Soon</div>
+</div>
+
+<div class="tile">
+  <div class="title">Allen Major 3</div>
+  <div class="status">Coming Soon</div>
+</div>
+
+<div class="tile">
+  <div class="title">Allen Major 4</div>
+  <div class="status">Coming Soon</div>
+</div>
+
+<div class="tile">
+  <div class="title">Allen Major 5</div>
+  <div class="status">Coming Soon</div>
+</div>
+
+<div class="tile">
+  <div class="title">Allen Major 6</div>
+  <div class="status">Coming Soon</div>
+</div>
+
+<div class="tile">
+  <div class="title">Allen Major 7</div>
+  <div class="status">Coming Soon</div>
+</div>
+
+<div class="tile">
+  <div class="title">Take Test</div>
+  <div class="status">Coming Soon</div>
+</div>
+
+  </div>  <a href="https://t.me/+0_eGsQpgkEU1YzRl" target="_blank" class="telegram">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+  </a></body>
 </html>
