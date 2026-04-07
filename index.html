@@ -1,134 +1,96 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALLEN MAJOR CBT</title>  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #eef2f7;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALLEN MAJOR CBT</title><style>
+body{margin:0;font-family:'Segoe UI',sans-serif;background:#eef2f7}
+header{background:#0b1a2b;color:#fff;padding:15px;text-align:center;font-weight:600;position:sticky;top:0}
+.container{max-width:1100px;margin:20px auto;padding:15px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
+.tile{background:#fff;padding:20px;border-radius:10px;text-align:center;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,0.1);transition:.2s}
+.tile:hover{transform:translateY(-5px)}
+.status{font-size:12px;color:#888}
+.hidden{display:none}
 
-    header {
-      background: #0b1a2b;
-      color: #fff;
-      padding: 18px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin:20px}
+.card{background:#fff;padding:15px;border-radius:10px;text-align:center}
+.progress-bar{height:8px;background:#ddd;border-radius:5px;overflow:hidden;margin:8px 0}
+.progress-fill{height:100%;background:#0b1a2b;width:0%}
 
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-    }
+input,button{padding:8px;border-radius:6px;border:none;margin-top:8px}
+button{background:#0b1a2b;color:#fff;cursor:pointer}
 
-    .tile {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 25px 15px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: all 0.25s ease;
-      cursor: pointer;
-      position: relative;
-    }
+canvas{width:100%;max-width:500px;margin:10px auto;display:block}
 
-    .tile:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .status {
-      font-size: 12px;
-      color: #888;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .telegram {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #0088cc;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-
-    .telegram:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    }
-
-    .telegram img {
-      width: 28px;
-      height: 28px;
-    }
-
-  </style></head>
-<body>  <header>ALLEN MAJOR CBT</header>  <div class="container"><a href="https://allenmajor1.vercel.app/" target="_blank">
-  <div class="tile">
-    <div class="title">Allen Major 1</div>
-    <div class="status">Available</div>
-  </div>
-</a>
-
-<div class="tile">
-  <div class="title">Allen Major 2</div>
-  <div class="status">Coming Soon</div>
+.telegram{position:fixed;bottom:20px;right:20px;background:#0088cc;width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.telegram img{width:28px}
+</style></head><body>
+<header>ALLEN MAJOR CBT</header><!-- HOME --><div id="home">
+<div class="container">
+<div class="tile" onclick="startTest()">Allen Major 1<div class="status">Start Test</div></div>
+<div class="tile">Allen Major 2<div class="status">Coming Soon</div></div>
+<div class="tile">Allen Major 3<div class="status">Coming Soon</div></div>
+<div class="tile">Allen Major 4<div class="status">Coming Soon</div></div>
+<div class="tile">Allen Major 5<div class="status">Coming Soon</div></div>
+<div class="tile">Allen Major 6<div class="status">Coming Soon</div></div>
+<div class="tile">Allen Major 7<div class="status">Coming Soon</div></div>
+<a href="https://allenmajor1.vercel.app/test8" target="_blank"><div class="tile">Allen Major 8 (AIOT)<div class="status">Start Test</div></div></a>
+<a href="https://allenmajor1.vercel.app/test9" target="_blank"><div class="tile">Allen Major 9<div class="status">Start Test</div></div></a>
+</div><div class="dashboard">
+<div class="card">Attempts<br><span id="attempts">0</span></div>
+<div class="card">Latest Score<br><span id="score">--</span></div><div class="card">
+Track Your Progress<br>
+<input type="number" id="scoreInput" placeholder="Enter score">
+<br>
+<button onclick="addScore()">Submit</button>
+<canvas id="chart"></canvas>
 </div>
-
-<div class="tile">
-  <div class="title">Allen Major 3</div>
-  <div class="status">Coming Soon</div>
 </div>
-
-<div class="tile">
-  <div class="title">Allen Major 4</div>
-  <div class="status">Coming Soon</div>
+</div><!-- TEST PAGE --><div id="test" class="hidden">
+<div class="container">
+<div class="tile">Test Running... (Demo)</div>
 </div>
+</div><a href="https://t.me/+0_eGsQpgkEU1YzRl" target="_blank" class="telegram">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+</a><script>
+let scores = JSON.parse(localStorage.getItem('scores')||'[]');
 
-<div class="tile">
-  <div class="title">Allen Major 5</div>
-  <div class="status">Coming Soon</div>
-</div>
+function addScore(){
+let val = parseInt(document.getElementById('scoreInput').value);
+if(!isNaN(val)){
+scores.push(val);
+localStorage.setItem('scores',JSON.stringify(scores));
+drawChart();
+document.getElementById('scoreInput').value='';
+}
+}
 
-<div class="tile">
-  <div class="title">Allen Major 6</div>
-  <div class="status">Coming Soon</div>
-</div>
+function drawChart(){
+let c = document.getElementById('chart');
+let ctx = c.getContext('2d');
+c.height=200;
+ctx.clearRect(0,0,c.width,c.height);
 
-<div class="tile">
-  <div class="title">Allen Major 7</div>
-  <div class="status">Coming Soon</div>
-</div>
+let max = Math.max(...scores,10);
+let step = c.width/(scores.length||1);
 
-<div class="tile">
-  <div class="title">Take Test</div>
-  <div class="status">Coming Soon</div>
-</div>
+ctx.beginPath();
+scores.forEach((s,i)=>{
+let x = i*step+20;
+let y = 200-(s/max*180);
+if(i===0) ctx.moveTo(x,y);
+else ctx.lineTo(x,y);
+});
+ctx.stroke();
+}
 
-  </div>  <a href="https://t.me/+0_eGsQpgkEU1YzRl" target="_blank" class="telegram">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
-  </a></body>
+function startTest(){
+alert('Test UI can be expanded later');
+}
+
+window.onload=function(){
+document.getElementById('attempts').innerText=localStorage.getItem('attempts')||0;
+document.getElementById('score').innerText=localStorage.getItem('score')||'--';
+drawChart();
+}
+</script></body>
 </html>
